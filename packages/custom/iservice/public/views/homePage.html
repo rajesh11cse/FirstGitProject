@@ -1,0 +1,34 @@
+<section class="welcome container-fluid" data-ng-controller="LoginCtrl as login">
+    <div class="jumbotron">
+        <div ng-show="login.loginError"  class="alert alert-dismissable alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>Oh! </strong>{{login.loginError}}.
+        </div>  
+        <h1>Solutio Admin</h1>
+      <!-- <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> -->
+    <form class="form-horizontal" name="loginForm" id="loginForm" ng-submit="login.login()">
+        <fieldset>
+            <!-- <legend>Legend</legend> -->
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-10">
+                    <input class="form-control" id="inputEmail" placeholder="Email" type="text" ng-model="login.user.email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-10">
+                    <input class="form-control" id="inputPassword" placeholder="Password" type="password" ng-model="login.user.password" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                   <!--  <button class="btn btn-default">Cancel</button> -->
+                    <button type="submit" ng-disabled="!loginForm.$valid" class="btn btn-primary btn-block">Login</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+  </div>
+</section>
